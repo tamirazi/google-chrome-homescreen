@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
 html,
 body {
   margin: 0;
   height: 100%;
   padding: 0;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
   background-color: rosybrown;
-  //   justify-content: center;
-  //   align-items: center;
   background-image: url("sunset.jpg");
   background-position: center;
   background-size: cover;
@@ -23,7 +23,6 @@ body {
     align-items: center;
     font-size: small;
     .header-link {
-      font-family: "Roboto";
       padding-left: 15px;
       text-decoration: unset;
       color: white;
@@ -37,8 +36,8 @@ body {
       }
     }
     .apps-icon {
-      height: 25px;
-      margin: 0 10px;
+      height: 24px;
+      margin: 0 20px 0 15px;
       color: rgba(255, 255, 255, 0.87);
       fill: currentColor;
       cursor: pointer;
@@ -69,7 +68,11 @@ body {
   }
 
   .input-container {
-    width: min-content;
+    letter-spacing: normal;
+    word-spacing: normal;
+    width: 60%;
+    min-width: 420px;
+    max-width: 580px;
     margin: 0 auto;
     display: flex;
     position: relative;
@@ -93,21 +96,55 @@ body {
       height: 44px;
       position: absolute;
       transform: scale(0.9);
-      position: absolute;
       right: 0;
       cursor: pointer;
     }
     #search {
-      min-width: 410px;
-      max-width: 584px;
+      font-size: 16px;
+      width: 100%;
       align-self: center;
       border-radius: 22px;
       height: 44px;
       border: none;
       box-sizing: border-box;
       padding-left: 40px;
+      box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
       &:focus {
         outline: none;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    a {
+      color: white;
+      font-size: small;
+      font-family: "Roboto";
+      display: flex;
+      align-items: center;
+      .link-icon {
+        padding-right: 5px;
+        width: 18px;
+        height: 18px;
+        filter: invert(1);
+      }
+    }
+    .edit-icon {
+      position: fixed;
+      width: 16px;
+      height: 16px;
+      padding: 5px;
+      right: 15px;
+      bottom: 15px;
+      filter: invert(1);
+      cursor: pointer;
+      border-radius: 50%;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
       }
     }
   }
