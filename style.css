@@ -36,7 +36,7 @@ body header {
 }
 
 body header .header-link {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   padding-left: 15px;
   text-decoration: unset;
   color: white;
@@ -62,9 +62,13 @@ body header .apps-icon {
 body header .img-profile {
   height: 32px;
   width: 32px;
-  background-color: black;
   border-radius: 50%;
   cursor: pointer;
+  background-image: url(https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  border-radius: 50%;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
 }
 
 body .logo-container {
@@ -80,17 +84,64 @@ body .logo-container .main-logo {
   height: 92px;
   background: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg");
   margin: auto;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
 }
 
-body #search {
+body .input-container {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+body .input-container:before {
+  content: " ";
+  background-image: url("https://img.icons8.com/ios/24/000000/search--v1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  cursor: pointer;
+}
+
+body .input-container:after {
+  content: " ";
+  background-image: url("https://img.icons8.com/material-rounded/24/000000/microphone.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+body .input-container #search {
   min-width: 410px;
   max-width: 584px;
-  width: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   border-radius: 22px;
   height: 44px;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 40px;
+}
+
+body .input-container #search:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

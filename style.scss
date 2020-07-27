@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 html,
 body {
   margin: 0;
@@ -12,7 +12,7 @@ body {
   background-color: rosybrown;
   //   justify-content: center;
   //   align-items: center;
-  background-image: url('sunset.jpg');
+  background-image: url("sunset.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body {
     align-items: center;
     font-size: small;
     .header-link {
-      font-family: 'Roboto';
+      font-family: "Roboto";
       padding-left: 15px;
       text-decoration: unset;
       color: white;
@@ -46,9 +46,13 @@ body {
     .img-profile {
       height: 32px;
       width: 32px;
-      background-color: black;
       border-radius: 50%;
       cursor: pointer;
+      background-image: url(https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+      border-radius: 50%;
+      cursor: pointer;
+      background-position: center;
+      background-size: cover;
     }
   }
   .logo-container {
@@ -58,18 +62,53 @@ body {
     .main-logo {
       width: 272px;
       height: 92px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg');
+      background: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg");
       margin: auto;
+      filter: brightness(0) invert(1);
     }
   }
 
-  #search {
+  .input-container {
+    width: min-content;
     margin: 0 auto;
-    min-width: 410px;
-    max-width: 584px;
-    width: 100%;
-    align-self: center;
-    border-radius: 22px;
-    height: 44px;
+    display: flex;
+    position: relative;
+    &:before {
+      content: " ";
+      background-image: url("https://img.icons8.com/ios/24/000000/search--v1.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      transform: scale(0.7);
+      cursor: pointer;
+    }
+    &:after {
+      content: " ";
+      background-image: url("https://img.icons8.com/material-rounded/24/000000/microphone.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      transform: scale(0.9);
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+    #search {
+      min-width: 410px;
+      max-width: 584px;
+      align-self: center;
+      border-radius: 22px;
+      height: 44px;
+      border: none;
+      box-sizing: border-box;
+      padding-left: 40px;
+      &:focus {
+        outline: none;
+      }
+    }
   }
 }
