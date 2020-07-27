@@ -151,6 +151,22 @@ body .input-container #search:focus {
   outline: none;
 }
 
+body .input-container #search:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+body .input-container #search:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+body .input-container #search:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+body .input-container #search:focus::placeholder {
+  color: transparent;
+}
+
 body footer {
   display: -webkit-box;
   display: -ms-flexbox;
