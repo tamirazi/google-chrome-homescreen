@@ -1,18 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
-html,
 body {
   margin: 0;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
   padding: 0;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
   background-color: rosybrown;
-  background-image: url("sunset.jpg");
+  background-image: url('sunset.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,7 +63,7 @@ body {
     .main-logo {
       width: 272px;
       height: 92px;
-      background: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg");
+      background: url('https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg');
       margin: auto;
       filter: brightness(0) invert(1);
     }
@@ -72,15 +72,15 @@ body {
   .input-container {
     letter-spacing: normal;
     word-spacing: normal;
-    width: 60%;
-    min-width: 420px;
+    width: 80%;
+    min-width: 300px;
     max-width: 580px;
     margin: 0 auto;
     display: flex;
     position: relative;
     &:before {
-      content: " ";
-      background-image: url("https://img.icons8.com/ios/24/000000/search--v1.png");
+      content: ' ';
+      background-image: url('https://img.icons8.com/ios/24/000000/search--v1.png');
       background-repeat: no-repeat;
       background-position: center;
       width: 44px;
@@ -90,8 +90,8 @@ body {
       cursor: pointer;
     }
     &:after {
-      content: " ";
-      background-image: url("https://img.icons8.com/material-rounded/24/000000/microphone.png");
+      content: ' ';
+      background-image: url('https://img.icons8.com/material-rounded/24/000000/microphone.png');
       background-repeat: no-repeat;
       background-position: center;
       width: 44px;
@@ -119,6 +119,63 @@ body {
       }
     }
   }
+  .last-visited-grid {
+    width: 100%;
+    max-width: 580px;
+    margin: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+    grid-auto-rows: 116px;
+    .app {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s;
+      border-radius: 3px;
+      cursor: pointer;
+      span {
+        font-weight: 500;
+        font-size: 12px;
+        color: white;
+      }
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        &::before {
+          content: '\22EE';
+          color: white;
+          font-size: 20px;
+          opacity: 0;
+          position: absolute;
+          top: 0px;
+          right: 5px;
+          animation: fadeIn 0.2s ease-in-out;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+        }
+      }
+      @media only screen and( max-width: calc(116px* 5)) {
+        &.amazon {
+          display: none;
+        }
+        &.apple {
+          display: none;
+        }
+      }
+      @media only screen and( max-width: calc(116px* 4)) {
+        &.instagram {
+          display: none;
+        }
+        &.github {
+          display: none;
+        }
+      }
+    }
+  }
   footer {
     display: flex;
     position: absolute;
@@ -128,9 +185,10 @@ body {
     a {
       color: white;
       font-size: small;
-      font-family: "Roboto";
+      font-family: 'Roboto';
       display: flex;
       align-items: center;
+      padding-left: 5px;
       .link-icon {
         padding-right: 5px;
         width: 18px;
@@ -152,5 +210,14 @@ body {
         background-color: rgba(0, 0, 0, 0.3);
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
